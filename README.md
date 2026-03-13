@@ -65,14 +65,6 @@ The React dev server starts on `http://localhost:5173` and proxies `/api` reques
 
 Navigate to **http://localhost:5173** in your browser. Select a city to see its weather, timezone, and astronomy data.
 
-## Running Tests
-
-```bash
-dotnet test
-```
-
-This runs all xUnit tests (10 tests covering service mapping, caching, error handling, and controller behavior).
-
 ## Project Structure
 
 ```
@@ -88,9 +80,6 @@ CircitCodingChallenge/
 │   ├── Middleware/                    # GlobalExceptionHandler (IExceptionHandler)
 │   ├── Program.cs                    # DI, Polly, CORS, middleware pipeline
 │   └── appsettings.json              # API keys, allowed cities, cache TTL
-├── WeatherApi.Tests/                 # xUnit + Moq unit tests
-│   ├── Services/                     # WeatherServiceTests
-│   └── Controllers/                  # WeatherControllerTests
 ├── weather-client/                   # React + Vite + Bootstrap
 │   ├── src/
 │   │   ├── components/               # CitySelector.jsx, WeatherDashboard.jsx
@@ -124,5 +113,4 @@ To add a new city, simply append it to the `AllowedCities` array — no code cha
 |----------|-------------------------------------------------|
 | Backend  | .NET 8, ASP.NET Core Web API, Polly, IMemoryCache |
 | Frontend | React 19, Vite, Bootstrap 5, Axios              |
-| Testing  | xUnit, Moq                                      |
 | External | WeatherAPI via RapidAPI                          |

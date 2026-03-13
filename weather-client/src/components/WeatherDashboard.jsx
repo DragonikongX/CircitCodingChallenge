@@ -46,7 +46,6 @@ export default function WeatherDashboard({ city }) {
 
   return (
     <div className="row g-4">
-      {/* Location Card */}
       <div className="col-md-6 col-lg-3">
         <div className="card h-100 shadow-sm border-0">
           <div className="card-body text-center">
@@ -64,7 +63,6 @@ export default function WeatherDashboard({ city }) {
         </div>
       </div>
 
-      {/* Weather Card */}
       <div className="col-md-6 col-lg-3">
         <div className="card h-100 shadow-sm border-0">
           <div className="card-body text-center">
@@ -94,7 +92,6 @@ export default function WeatherDashboard({ city }) {
         </div>
       </div>
 
-      {/* Timezone Card */}
       <div className="col-md-6 col-lg-3">
         <div className="card h-100 shadow-sm border-0">
           <div className="card-body text-center">
@@ -106,7 +103,6 @@ export default function WeatherDashboard({ city }) {
         </div>
       </div>
 
-      {/* Astronomy Card */}
       <div className="col-md-6 col-lg-3">
         <div className="card h-100 shadow-sm border-0">
           <div className="card-body text-center">
