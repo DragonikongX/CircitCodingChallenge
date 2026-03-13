@@ -2,6 +2,8 @@
 
 A web application that displays weather, timezone, and astronomy data for a selected city. Backend in C# (.NET 8), frontend in React with Vite.
 
+The task suggested VueJS, but I chose React — I feel more confident in it than in Vue, which allowed me to deliver a more stable solution. The frontend never calls the external API directly; all requests go through the backend, which acts as a proxy.
+
 ![Weather Dashboard](assets/screenshot.png)
 
 ---
@@ -15,24 +17,24 @@ The following steps assume you start with a fresh system and need to install eve
 The backend requires .NET 8.
 
 **Windows:**
-- Download the installer from https://dotnet.microsoft.com/download/dotnet/8.0
+- Download the installer from [https://dotnet.microsoft.com/download/dotnet/8.0](https://dotnet.microsoft.com/download/dotnet/8.0)
 - Run the SDK installer (not just the Runtime)
 - Restart the terminal and verify:
-  ```
+  ```bash
   dotnet --version
   ```
   Expected output: `8.0.x` or similar
 
 **macOS:**
-- Using Homebrew (install from https://brew.sh if needed):
-  ```
+- Using Homebrew (install from [https://brew.sh](https://brew.sh) if needed):
+  ```bash
   brew install dotnet@8
   ```
-- Or download from https://dotnet.microsoft.com/download/dotnet/8.0
+- Or download from [https://dotnet.microsoft.com/download/dotnet/8.0](https://dotnet.microsoft.com/download/dotnet/8.0)
 - Verify: `dotnet --version`
 
 **Linux (Ubuntu/Debian):**
-  ```
+  ```bash
   wget https://packages.microsoft.com/config/ubuntu/$(lsb_release -rs)/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
   sudo dpkg -i packages-microsoft-prod.deb
   rm packages-microsoft-prod.deb
@@ -46,10 +48,10 @@ The backend requires .NET 8.
 The frontend requires Node.js 18 or newer. npm is included with Node.js.
 
 **Windows:**
-- Download the LTS installer from https://nodejs.org
+- Download the LTS installer from [https://nodejs.org](https://nodejs.org)
 - Run the installer and follow the wizard (ensure "Add to PATH" is checked)
 - Restart the terminal and verify:
-  ```
+  ```bash
   node --version
   npm --version
   ```
@@ -57,14 +59,14 @@ The frontend requires Node.js 18 or newer. npm is included with Node.js.
 
 **macOS:**
 - Using Homebrew:
-  ```
+  ```bash
   brew install node
   ```
-- Or download from https://nodejs.org
+- Or download from [https://nodejs.org](https://nodejs.org)
 - Verify: `node --version` and `npm --version`
 
 **Linux (Ubuntu/Debian):**
-  ```
+  ```bash
   curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
   sudo apt-get install -y nodejs
   node --version
@@ -73,13 +75,13 @@ The frontend requires Node.js 18 or newer. npm is included with Node.js.
 
 ### 3. Install Git (if not present)
 
-**Windows:** Download from https://git-scm.com/download/win  
+**Windows:** Download from [https://git-scm.com/download/win](https://git-scm.com/download/win)  
 **macOS:** `xcode-select --install` or `brew install git`  
 **Linux:** `sudo apt-get install git` (Ubuntu/Debian)
 
 ### 4. Clone the Repository
 
-  ```
+  ```bash
   git clone https://github.com/YOUR_USERNAME/CircitCodingChallenge.git
   cd CircitCodingChallenge
   ```
@@ -94,14 +96,14 @@ You need two terminals: one for the backend, one for the frontend.
 
 ### Terminal 1 — Backend (WeatherApi)
 
-  ```
+  ```bash
   cd WeatherApi
   dotnet restore
   dotnet run
   ```
 
 The API starts on **http://localhost:5000**. You should see output similar to:
-  ```
+  ```text
   info: Microsoft.Hosting.Lifetime[14]
         Now listening on: http://localhost:5000
   ```
@@ -110,14 +112,14 @@ Leave this terminal running.
 
 ### Terminal 2 — Frontend (weather-client)
 
-  ```
+  ```bash
   cd weather-client
   npm install
   npm run dev
   ```
 
 The React app starts on **http://localhost:5173**. You should see:
-  ```
+  ```text
   VITE v8.x.x  ready in xxx ms
   ➜  Local:   http://localhost:5173/
   ```
@@ -139,11 +141,11 @@ All configuration is in `WeatherApi/appsettings.json`:
 
 To add a new city, append its name to the `AllowedCities` array. The city must be recognized by the WeatherAPI service.
 
+**Note on Security:** To meet the task requirement that the project must be runnable immediately after cloning from GitHub without additional setup, I left the API key explicitly in the config file. I am fully aware that in a commercial production environment this key should never be committed to the repository and would be managed securely using e.g. .NET User Secrets or environment variables.
+
 ---
 
 ## Project Structure
 
 - `WeatherApi/` — .NET 8 Web API (Controller, Service, Repository, Models)
 - `weather-client/` — React app with Vite, Bootstrap, Lucide icons
-
----
