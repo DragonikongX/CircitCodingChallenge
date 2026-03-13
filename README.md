@@ -32,7 +32,7 @@ The task suggested VueJS, but I chose React — I feel more confident in it than
 
 The list of allowed cities and the API key are in `WeatherApi/appsettings.json`. To add a new city, append it to the `AllowedCities` array — no code changes required.
 
-**Note:** The RapidAPI key is stored explicitly in `appsettings.json` to meet the task requirement that the project must be runnable immediately after cloning from GitHub, without additional setup. In a production environment, this key would be stored securely using .NET User Secrets or as an environment variable.
+To meet the task requirement that the project must be runnable immediately after cloning from GitHub without additional setup, I left the API key explicitly in the config file. I am fully aware that in a commercial production environment this key should never be committed to the repository and would be managed securely using e.g. .NET User Secrets or environment variables.
 
 ## Project Structure
 
