@@ -1,38 +1,40 @@
 # CircitCodingChallenge — Weather Dashboard
 
-Aplikacja webowa pokazująca pogodę, strefę czasową i dane astronomiczne dla wybranego miasta. Backend w C# (.NET 8), frontend w React.
+A web application that displays weather, timezone, and astronomy data for a selected city. Backend in C# (.NET 8), frontend in React.
 
-W zadaniu sugerowano VueJS, ale wybrałem React — czuję się w nim pewniej niż w Vue, co pozwoliło mi dostarczyć stabilniejsze rozwiązanie. Frontend nigdy nie wywołuje zewnętrznego API bezpośrednio; wszystkie zapytania idą przez backend, który pełni rolę proxy.
+The task suggested VueJS, but I chose React — I feel more confident in it than in Vue, which allowed me to deliver a more stable solution. The frontend never calls the external API directly; all requests go through the backend, which acts as a proxy.
 
-## Wymagania
+## Prerequisites
 
 - .NET 8 SDK
-- Node.js 18+ (z npm)
+- Node.js 18+ (with npm)
 
-## Uruchomienie
+## Getting Started
 
-1. **Backend** — w jednym terminalu:
+1. **Backend** — in one terminal:
    ```
    cd WeatherApi
    dotnet run
    ```
-   API startuje na http://localhost:5000
+   The API starts on http://localhost:5000
 
-2. **Frontend** — w drugim terminalu:
+2. **Frontend** — in a second terminal:
    ```
    cd weather-client
    npm install
    npm run dev
    ```
-   Aplikacja React startuje na http://localhost:5173 i proxy'uje zapytania `/api` do backendu.
+   The React app starts on http://localhost:5173 and proxies `/api` requests to the backend.
 
-3. Otwórz w przeglądarce **http://localhost:5173** i wybierz jedno z miast (Cracow, Warsaw, Dublin).
+3. Open **http://localhost:5173** in your browser and select a city (Cracow, Warsaw, Dublin).
 
-## Konfiguracja
+## Configuration
 
-Lista dozwolonych miast i klucz API są w `WeatherApi/appsettings.json`. Aby dodać nowe miasto, wystarczy dopisać je do tablicy `AllowedCities` — bez zmian w kodzie.
+The list of allowed cities and the API key are in `WeatherApi/appsettings.json`. To add a new city, append it to the `AllowedCities` array — no code changes required.
 
-## Struktura projektu
+**Note:** The RapidAPI key is stored explicitly in `appsettings.json` to meet the task requirement that the project must be runnable immediately after cloning from GitHub, without additional setup. In a production environment, this key would be stored securely using .NET User Secrets or as an environment variable.
 
-- `WeatherApi/` — API .NET (kontroler, serwis, repozytorium, modele)
-- `weather-client/` — aplikacja React z Vite i Bootstrap
+## Project Structure
+
+- `WeatherApi/` — .NET API (controller, service, repository, models)
+- `weather-client/` — React app with Vite and Bootstrap
