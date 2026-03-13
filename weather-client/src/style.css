@@ -29,13 +29,6 @@ body {
   transform: translateY(-5px);
 }
 
-.bento-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
 .hero-temp {
   font-size: 5rem;
   font-weight: 700;

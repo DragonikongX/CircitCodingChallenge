@@ -61,7 +61,6 @@ export default function WeatherDashboard({ city }) {
         </h2>
       </div>
 
-      {/* Section 1: current.json */}
       <div className="api-section mb-4">
         <h3 className="section-title mb-4">Current Weather</h3>
         <div className="glass-card section-card">
@@ -120,7 +119,6 @@ export default function WeatherDashboard({ city }) {
         </div>
       </div>
 
-      {/* Section 2: timezone.json */}
       <div className="api-section mb-4">
         <h3 className="section-title mb-4">Timezone</h3>
         <div className="glass-card section-card">
@@ -156,7 +154,6 @@ export default function WeatherDashboard({ city }) {
         </div>
       </div>
 
-      {/* Section 3: astronomy.json */}
       <div className="api-section mb-4">
         <h3 className="section-title mb-4">Astronomy</h3>
         <div className="glass-card section-card">
