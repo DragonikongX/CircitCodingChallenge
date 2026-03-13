@@ -2,6 +2,8 @@
 
 A web application that displays weather, timezone, and astronomy data for a selected city. Backend in C# (.NET 8), frontend in React with Vite.
 
+![Weather Dashboard](assets/screenshot.png)
+
 ---
 
 ## Installation on a Clean Machine
@@ -145,23 +147,3 @@ To add a new city, append its name to the `AllowedCities` array. The city must b
 - `weather-client/` — React app with Vite, Bootstrap, Lucide icons
 
 ---
-
-## Troubleshooting
-
-**Backend fails to start**
-- Ensure .NET 8 SDK is installed: `dotnet --version`
-- Ensure port 5000 is not in use by another application
-
-**Frontend fails to start**
-- Ensure Node.js 18+ is installed: `node --version`
-- Delete `node_modules` and run `npm install` again
-- Ensure port 5173 is free
-
-**"Failed to load cities" or "Failed to fetch weather data"**
-- Ensure the backend is running on http://localhost:5000
-- Check that the RapidAPI key in `appsettings.json` is valid
-- Verify your internet connection (the backend calls RapidAPI)
-
-**CORS errors in the browser**
-- Ensure `AllowedOrigins` in `appsettings.json` includes `http://localhost:5173`
-- Ensure you access the app via http://localhost:5173, not 127.0.0.1 or another port
