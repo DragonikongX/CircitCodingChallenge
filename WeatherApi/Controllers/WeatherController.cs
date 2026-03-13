@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using WeatherApi.Exceptions;
 using WeatherApi.Services;
 
 namespace WeatherApi.Controllers;
@@ -17,8 +18,19 @@ public class WeatherController : ControllerBase
     [HttpGet("{city}")]
     public async Task<IActionResult> GetWeather(string city)
     {
-        var result = await _weatherService.GetWeatherDataAsync(city);
-        return Ok(result);
+        try
+        {
+            var result = await _weatherService.GetWeatherDataAsync(city);
+            return Ok(result);
+        }
+        catch (CityNotFoundException ex)
+        {
+            return BadRequest(ex.Message);
+        }
+        catch
+        {
+            return StatusCode(500);
+        }
     }
 
     [HttpGet("cities")]

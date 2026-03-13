@@ -15,7 +15,8 @@ export default function WeatherDashboard({ city }) {
     getWeather(city)
       .then(setWeather)
       .catch((e) => {
-        setError(e.response?.data?.detail || 'Failed to fetch weather data. Please try again.')
+        const errMsg = e.response?.data
+        setError(typeof errMsg === 'string' ? errMsg : errMsg?.detail || 'Failed to fetch weather data. Please try again.')
       })
       .finally(() => setLoading(false))
   }, [city])
