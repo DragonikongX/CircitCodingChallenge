@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  color: white;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.app-container {
+  min-height: 100vh;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 24px;
+  padding: 1.5rem;
+  color: white;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  height: 100%;
+}
+
+.glass-card:hover {
+  transform: translateY(-5px);
+}
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.hero-temp {
+  font-size: 5rem;
+  font-weight: 700;
+  line-height: 1;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.icon-muted {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.city-btn {
+  transition: transform 0.15s ease;
+}
+
+.city-btn:hover {
+  transform: scale(1.02);
+}
+
+.city-btn.btn-outline-light {
+  color: white;
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+.city-btn.btn-outline-light:hover {
+  color: #1e3c72;
+  background-color: white;
+  border-color: white;
+}
+
+.api-section {
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+}
+
+.section-card {
+  height: auto;
+  padding: 2rem;
+}

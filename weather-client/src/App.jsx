@@ -6,7 +6,7 @@ export default function App() {
   const [selectedCity, setSelectedCity] = useState(null)
 
   return (
-    <div className="min-vh-100" style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }}>
+    <div className="min-vh-100 app-container">
       <div className="container py-5">
         <header className="text-center text-white mb-5">
           <h1 className="display-4 fw-bold">

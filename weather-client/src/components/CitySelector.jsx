@@ -14,9 +14,9 @@ export default function CitySelector({ selectedCity, onCitySelected }) {
   }, [])
 
   return (
-    <div className="card shadow-sm mb-4">
-      <div className="card-body text-center">
-        <h5 className="card-title mb-3">Select a City</h5>
+    <div className="glass-card mb-4">
+      <div className="text-center">
+        <h5 className="mb-3">Select a City</h5>
         {loading && <div className="text-muted">Loading cities...</div>}
         {error && <div className="text-danger">{error}</div>}
         {!loading && !error && (
@@ -24,7 +24,7 @@ export default function CitySelector({ selectedCity, onCitySelected }) {
             {cities.map((city) => (
               <button
                 key={city}
-                className={`btn btn-lg ${city === selectedCity ? 'btn-primary' : 'btn-outline-primary'}`}
+                className={`btn btn-lg city-btn ${city === selectedCity ? 'btn-light text-primary' : 'btn-outline-light'}`}
                 onClick={() => onCitySelected(city)}
               >
                 {city}
